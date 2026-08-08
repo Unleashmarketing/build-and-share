@@ -638,6 +638,8 @@
   @media (max-width: 900px) {
     .hero { min-height: 100svh; }
     .hero-content { padding: 5rem 7vw 6rem; }
+    .trust-bar { column-gap: 1.5rem; padding: 0.55rem 5vw; }
+    .trust-item { font-size: 0.72rem; }
     .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
     .about-images { height: 300px; }
     .services-grid { grid-template-columns: 1fr; }
