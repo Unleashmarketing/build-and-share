@@ -282,11 +282,12 @@
   /* ─── TRUST BAR ───────────────────────────── */
   .trust-bar {
     background: var(--yellow); padding: 0.6rem 5vw;
-    display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;
+    display: flex; justify-content: center; flex-wrap: wrap;
+    row-gap: 0.35rem; column-gap: 3rem;
   }
   .trust-item {
     color: var(--black); font-size: 0.78rem; font-weight: 700;
-    letter-spacing: 0.1em; text-transform: uppercase;
+    letter-spacing: 0.1em; text-transform: uppercase; line-height: 1.15;
     display: flex; align-items: center; gap: 8px;
   }
   .trust-item i { width: 14px; height: 14px; }
