@@ -40,7 +40,7 @@ export function useScrollReveal() {
         const val = target * ease;
         el.textContent = String(target >= 10 ? Math.round(val) : val.toFixed(0));
         if (p < 1) requestAnimationFrame(update);
-        else el.textContent = el.dataset.final ?? "";
+        else el.textContent = el.dataset['final'] ?? "";
       };
       requestAnimationFrame(update);
     };
@@ -52,7 +52,7 @@ export function useScrollReveal() {
           e.target.classList.add("counted");
           const numEl = e.target.querySelector<HTMLElement>(".stat-num");
           if (numEl) {
-            const final = numEl.dataset.final ?? "";
+            const final = numEl.dataset['final'] ?? "";
             animateCount(numEl, parseFloat(final.replace(/[^0-9.]/g, "")));
           }
           statsObserver.unobserve(e.target);
@@ -63,7 +63,7 @@ export function useScrollReveal() {
     document.querySelectorAll<HTMLElement>(".stat-item").forEach((item) => {
       const numEl = item.querySelector<HTMLElement>(".stat-num");
       if (numEl) {
-        numEl.dataset.final = numEl.textContent ?? "";
+        numEl.dataset['final'] = numEl.textContent ?? "";
         statsObserver.observe(item);
       }
     });
