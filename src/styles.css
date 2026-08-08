@@ -663,6 +663,8 @@
     .gallery-grid-extended .gallery-item:nth-child(5),
     .gallery-grid-extended .gallery-item:nth-child(8) { grid-column: 1; }
     .menu-grid { grid-template-columns: 1fr 1fr; }
+    .trust-bar { column-gap: 1.5rem; }
+    .trust-item { font-size: 0.72rem; }
     .trust-item .sep { display: none; }
   }
 
