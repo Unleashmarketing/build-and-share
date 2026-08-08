@@ -11,9 +11,12 @@ import {
   Mail,
   Send,
   ArrowRight,
+  Eye,
 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 import { events } from "@/data/events";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
