@@ -34,7 +34,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Vom Foodtruck bis zur Hochzeit – Leidenschaft, Stil und ehrlicher Geschmack für deine Veranstaltung.",
+          "Foodtruck-Catering für Hochzeiten, Firmenevents und Festivals in der Region Rhein-Main & Rhein-Neckar. Seit 2016 mit Oldtimer-Foodtrucks unterwegs.",
       },
     ],
   }),

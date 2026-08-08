@@ -81,11 +81,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Foodtruck-Catering für Hochzeiten, Firmenevents und Festivals in der Region Rhein-Main & Rhein-Neckar.",
+          "Foodtruck-Catering für Hochzeiten, Firmenevents und Festivals in der Region Rhein-Main & Rhein-Neckar. Seit 2016 mit Oldtimer-Foodtrucks unterwegs.",
       },
       { name: "author", content: "Laras Kantinchen" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "Laras Kantinchen – Nostalgie, Kult & geiler Geschmack" },
+      { name: "twitter:title", content: "Laras Kantinchen – Nostalgie, Kult & geiler Geschmack" },
+      { property: "og:description", content: "Foodtruck-Catering für Hochzeiten, Firmenevents und Festivals in der Region Rhein-Main & Rhein-Neckar. Seit 2016 mit Oldtimer-Foodtrucks unterwegs." },
+      { name: "twitter:description", content: "Foodtruck-Catering für Hochzeiten, Firmenevents und Festivals in der Region Rhein-Main & Rhein-Neckar. Seit 2016 mit Oldtimer-Foodtrucks unterwegs." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5bfa0cb4138727116564d984147a36df/id-preview-b7bc9470--596f0b29-a03c-4e1d-8bf8-9a256e293f51.lovable.app-1786199331772.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/5bfa0cb4138727116564d984147a36df/id-preview-b7bc9470--596f0b29-a03c-4e1d-8bf8-9a256e293f51.lovable.app-1786199331772.png" },
     ],
     links: [
       {
