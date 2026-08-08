@@ -457,14 +457,15 @@ function Index() {
         </div>
       </footer>
 
-      {/* SOCIAL BADGE */}
+      {/* VISITOR BADGE */}
       <div className="social-badges">
-        <a href="https://www.instagram.com/laras_kantinchen/" target="_blank" rel="noreferrer" className="ig-badge">
-          <span style={{ color: "#EDDC9A", display: "flex" }}><InstagramIcon size={18} /></span>
-          <span className="ig-badge-num">1.584</span>
-          <span className="ig-badge-label">Follower</span>
-        </a>
+        <div className="ig-badge">
+          <span style={{ color: "#EDDC9A", display: "flex" }}><Eye size={18} /></span>
+          <span className="ig-badge-num">{visits !== null ? visits.toLocaleString("de-DE") : "–"}</span>
+          <span className="ig-badge-label">Besuche</span>
+        </div>
       </div>
+
 
       {/* COOKIE BANNER */}
       <div className={`cookie-banner${cookieHidden ? " hidden" : ""}`}>
