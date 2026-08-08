@@ -11,9 +11,12 @@ import {
   Mail,
   Send,
   ArrowRight,
+  Eye,
 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 import { events } from "@/data/events";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -91,10 +94,37 @@ function Index() {
   const [btnLabel, setBtnLabel] = useState("Anfrage absenden");
   const [sending, setSending] = useState(false);
   const [cookieHidden, setCookieHidden] = useState(true);
+  const [visits, setVisits] = useState<number | null>(null);
 
   useEffect(() => {
     setCookieHidden(Boolean(localStorage.getItem("cookieConsent")));
   }, []);
+
+  useEffect(() => {
+    let active = true;
+    const load = async () => {
+      const counted = sessionStorage.getItem("visitCounted");
+      if (counted) {
+        const { data } = await supabase
+          .from("visitor_counter")
+          .select("count")
+          .eq("id", 1)
+          .maybeSingle();
+        if (active && data) setVisits(Number(data.count));
+        return;
+      }
+      const { data, error } = await supabase.rpc("increment_visitor_count");
+      if (!error && active) {
+        sessionStorage.setItem("visitCounted", "1");
+        setVisits(Number(data));
+      }
+    };
+    void load();
+    return () => {
+      active = false;
+    };
+  }, []);
+
 
   const dismissCookie = (value: string) => {
     localStorage.setItem("cookieConsent", value);
@@ -457,14 +487,15 @@ function Index() {
         </div>
       </footer>
 
-      {/* SOCIAL BADGE */}
+      {/* VISITOR BADGE */}
       <div className="social-badges">
-        <a href="https://www.instagram.com/laras_kantinchen/" target="_blank" rel="noreferrer" className="ig-badge">
-          <span style={{ color: "#EDDC9A", display: "flex" }}><InstagramIcon size={18} /></span>
-          <span className="ig-badge-num">1.584</span>
-          <span className="ig-badge-label">Follower</span>
-        </a>
+        <div className="ig-badge">
+          <span style={{ color: "#EDDC9A", display: "flex" }}><Eye size={18} /></span>
+          <span className="ig-badge-num">{visits !== null ? visits.toLocaleString("de-DE") : "–"}</span>
+          <span className="ig-badge-label">Besuche</span>
+        </div>
       </div>
+
 
       {/* COOKIE BANNER */}
       <div className={`cookie-banner${cookieHidden ? " hidden" : ""}`}>
