@@ -282,11 +282,12 @@
   /* ─── TRUST BAR ───────────────────────────── */
   .trust-bar {
     background: var(--yellow); padding: 0.6rem 5vw;
-    display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;
+    display: flex; justify-content: center; flex-wrap: wrap;
+    row-gap: 0.35rem; column-gap: 3rem;
   }
   .trust-item {
     color: var(--black); font-size: 0.78rem; font-weight: 700;
-    letter-spacing: 0.1em; text-transform: uppercase;
+    letter-spacing: 0.1em; text-transform: uppercase; line-height: 1.15;
     display: flex; align-items: center; gap: 8px;
   }
   .trust-item i { width: 14px; height: 14px; }
@@ -637,6 +638,8 @@
   @media (max-width: 900px) {
     .hero { min-height: 100svh; }
     .hero-content { padding: 5rem 7vw 6rem; }
+    .trust-bar { column-gap: 1.5rem; padding: 0.55rem 5vw; }
+    .trust-item { font-size: 0.72rem; }
     .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
     .about-images { height: 300px; }
     .services-grid { grid-template-columns: 1fr; }
@@ -662,6 +665,8 @@
     .gallery-grid-extended .gallery-item:nth-child(5),
     .gallery-grid-extended .gallery-item:nth-child(8) { grid-column: 1; }
     .menu-grid { grid-template-columns: 1fr 1fr; }
+    .trust-bar { column-gap: 1.5rem; }
+    .trust-item { font-size: 0.72rem; }
     .trust-item .sep { display: none; }
   }
 
