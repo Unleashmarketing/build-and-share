@@ -11,10 +11,6 @@ export default defineConfig({
   // route and writes the deployable site to .output/public.
   nitro: {
     preset: "github-pages",
-    prerender: {
-      crawlLinks: true,
-      routes: ["/", "/404.html", "/impressum", "/datenschutz", "/event/1", "/event/2", "/event/3"],
-    },
   },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
