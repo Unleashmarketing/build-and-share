@@ -30,7 +30,11 @@ jobs:
         run: bun install --frozen-lockfile
 
       - name: Build static website
-        run: bun run build
+        run: |
+          LOVABLE_SANDBOX=1 bun run build
+          bun scripts/export-github-pages.mjs
+          cp -R dist/client/. .output/public/
+          touch .output/public/.nojekyll
         env:
           VITE_SUPABASE_URL: https://mypxvupencbhrukzrybs.supabase.co
           VITE_SUPABASE_PUBLISHABLE_KEY: sb_publishable_WHb9T6RorqnOOdKl9Xpdag_-t_ULM2j
