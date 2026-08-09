@@ -1,0 +1,52 @@
+name: Deploy website to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Build static website
+        run: bun run build
+        env:
+          VITE_SUPABASE_URL: https://mypxvupencbhrukzrybs.supabase.co
+          VITE_SUPABASE_PUBLISHABLE_KEY: sb_publishable_WHb9T6RorqnOOdKl9Xpdag_-t_ULM2j
+          NITRO_PRESET: github-pages
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload website
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .output/public
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
