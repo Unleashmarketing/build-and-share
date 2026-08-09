@@ -10,9 +10,10 @@ export default defineConfig({
   // GitHub Pages can only serve static files. Nitro prerenders every linked
   // route and writes the deployable site to .output/public.
   nitro: {
-    preset: "github_pages",
-    output: {
-      dir: ".output/public",
+    preset: "github-pages",
+    prerender: {
+      crawlLinks: true,
+      routes: ["/", "/404.html", "/impressum", "/datenschutz", "/event/1", "/event/2", "/event/3"],
     },
   },
   tanstackStart: {
