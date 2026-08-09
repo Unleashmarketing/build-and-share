@@ -34,7 +34,7 @@ jobs:
         env:
           VITE_SUPABASE_URL: https://mypxvupencbhrukzrybs.supabase.co
           VITE_SUPABASE_PUBLISHABLE_KEY: sb_publishable_WHb9T6RorqnOOdKl9Xpdag_-t_ULM2j
-          NITRO_PRESET: github_pages
+          NITRO_PRESET: github-pages
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
