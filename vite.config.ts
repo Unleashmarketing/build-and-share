@@ -10,7 +10,10 @@ export default defineConfig({
   // GitHub Pages can only serve static files. Nitro prerenders every linked
   // route and writes the deployable site to .output/public.
   nitro: {
-    preset: "github-pages",
+    preset: "github_pages",
+    output: {
+      dir: ".output/public",
+    },
   },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
