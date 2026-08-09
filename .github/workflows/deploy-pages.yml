@@ -15,10 +15,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -39,14 +36,18 @@ jobs:
           VITE_SUPABASE_PUBLISHABLE_KEY: sb_publishable_WHb9T6RorqnOOdKl9Xpdag_-t_ULM2j
           NITRO_PRESET: github_pages
 
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload website
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: .output/public
 
-      - name: Deploy
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
