@@ -7,11 +7,6 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
-  // GitHub Pages can only serve static files. Nitro prerenders every linked
-  // route and writes the deployable site to .output/public.
-  nitro: {
-    preset: "github-pages",
-  },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
