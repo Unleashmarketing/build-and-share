@@ -17,6 +17,8 @@ import { supabase } from "@/integrations/supabase/client";
 import { events } from "@/data/events";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import salsiciaAsset from "@/assets/salsicia-kartoffelsalat.jpg.asset.json";
+import erdbeerCupcakesAsset from "@/assets/erdbeer-cupcakes.jpeg.asset.json";
+import fruechteCupcakesAsset from "@/assets/fruechte-cupcakes.jpeg.asset.json";
 
 
 export const Route = createFileRoute("/")({
@@ -55,6 +57,8 @@ const galleryImages: [string, string][] = [
   ["/img/Kantinchen34.jpeg", "Weinbergstisch"],
   ["/img/Kantinchen73.jpg", "Burrata Salat"],
   ["/img/Kantinchen75.jpg", "Risotto"],
+  [erdbeerCupcakesAsset.url, "Erdbeer-Cupcakes mit Vanillecreme"],
+  [fruechteCupcakesAsset.url, "Cupcakes mit Aprikosen und Johannisbeeren"],
 ];
 
 const menuItems: [string, string][] = [
