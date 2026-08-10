@@ -45,8 +45,8 @@ export const Route = createFileRoute("/")({
 });
 
 const galleryImages: [string, string][] = [
-  [erdbeerCupcakesAsset.url, "Erdbeer-Cupcakes mit Vanillecreme"],
   ["/img/Kantinchen1.jpg", "Truck bei Nacht"],
+  [erdbeerCupcakesAsset.url, "Erdbeer-Cupcakes mit Vanillecreme"],
   ["/img/Kantinchen56.jpeg", "Truck im Weinberg"],
   ["/img/Kantinchen59.jpeg", "Truck am See"],
   ["/img/Kantinchen22.jpeg", "Truck tagsüber"],
