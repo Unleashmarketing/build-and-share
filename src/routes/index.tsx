@@ -64,6 +64,7 @@ const menuItems: [string, string][] = [
   ["/img/Kantinchen4.jpg", "Raclette"],
   ["/img/Kantinchen38.jpeg", "Cupcakes"],
   ["/img/Kantinchen68.jpeg", "Curry"],
+  [salsiciaAsset.url, "Salsicia mit Kartoffelsalat"],
 ];
 
 function InstagramIcon({ size = 16 }: { size?: number }) {
