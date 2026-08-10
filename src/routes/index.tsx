@@ -57,6 +57,8 @@ const galleryImages: [string, string][] = [
   ["/img/Kantinchen34.jpeg", "Weinbergstisch"],
   ["/img/Kantinchen73.jpg", "Burrata Salat"],
   ["/img/Kantinchen75.jpg", "Risotto"],
+  [erdbeerCupcakesAsset.url, "Erdbeer-Cupcakes mit Vanillecreme"],
+  [fruechteCupcakesAsset.url, "Cupcakes mit Aprikosen und Johannisbeeren"],
 ];
 
 const menuItems: [string, string][] = [
