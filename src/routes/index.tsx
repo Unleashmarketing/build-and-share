@@ -16,6 +16,7 @@ import {
 import { supabase } from "@/integrations/supabase/client";
 import { events } from "@/data/events";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import salsiciaAsset from "@/assets/salsicia-kartoffelsalat.jpg.asset.json";
 
 
 export const Route = createFileRoute("/")({
@@ -63,6 +64,7 @@ const menuItems: [string, string][] = [
   ["/img/Kantinchen4.jpg", "Raclette"],
   ["/img/Kantinchen38.jpeg", "Cupcakes"],
   ["/img/Kantinchen68.jpeg", "Curry"],
+  [salsiciaAsset.url, "Salsicia mit Kartoffelsalat"],
 ];
 
 function InstagramIcon({ size = 16 }: { size?: number }) {
