@@ -16,6 +16,7 @@ import {
 import { supabase } from "@/integrations/supabase/client";
 import { events } from "@/data/events";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import salsiciaAsset from "@/assets/salsicia-kartoffelsalat.jpg.asset.json";
 
 
 export const Route = createFileRoute("/")({
