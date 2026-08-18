@@ -16,9 +16,6 @@ import {
 import { supabase } from "@/integrations/supabase/client";
 import { events } from "@/data/events";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
-import salsiciaAsset from "@/assets/salsicia-kartoffelsalat.jpg.asset.json";
-import erdbeerCupcakesAsset from "@/assets/erdbeer-cupcakes.jpeg.asset.json";
-import fruechteCupcakesAsset from "@/assets/fruechte-cupcakes.jpeg.asset.json";
 
 
 export const Route = createFileRoute("/")({
@@ -46,7 +43,7 @@ export const Route = createFileRoute("/")({
 
 const galleryImages: [string, string][] = [
   ["/img/Kantinchen1.jpg", "Truck bei Nacht"],
-  [erdbeerCupcakesAsset.url, "Erdbeer-Cupcakes mit Vanillecreme"],
+  ["/img/erdbeer-cupcakes.jpeg", "Erdbeer-Cupcakes mit Vanillecreme"],
   ["/img/Kantinchen56.jpeg", "Truck im Weinberg"],
   ["/img/Kantinchen59.jpeg", "Truck am See"],
   ["/img/Kantinchen22.jpeg", "Truck tagsüber"],
@@ -58,7 +55,7 @@ const galleryImages: [string, string][] = [
   ["/img/Kantinchen34.jpeg", "Weinbergstisch"],
   ["/img/Kantinchen73.jpg", "Burrata Salat"],
   ["/img/Kantinchen75.jpg", "Risotto"],
-  [fruechteCupcakesAsset.url, "Cupcakes mit Aprikosen und Johannisbeeren"],
+  ["/img/fruechte-cupcakes.jpeg", "Cupcakes mit Aprikosen und Johannisbeeren"],
 ];
 
 const menuItems: [string, string][] = [
@@ -68,7 +65,7 @@ const menuItems: [string, string][] = [
   ["/img/Kantinchen4.jpg", "Raclette"],
   ["/img/Kantinchen38.jpeg", "Cupcakes"],
   ["/img/Kantinchen68.jpeg", "Curry"],
-  [salsiciaAsset.url, "Salsicia mit Kartoffelsalat"],
+  ["/img/salsicia-kartoffelsalat.jpg", "Salsicia mit Kartoffelsalat"],
 ];
 
 function InstagramIcon({ size = 16 }: { size?: number }) {
